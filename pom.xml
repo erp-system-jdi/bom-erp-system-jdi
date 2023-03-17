@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.erp-system</groupId>
 	<artifactId>bom-erp-system-jdi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>bom-erp-system-jdi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -20,6 +20,7 @@
 		<org.projectlombok.version>1.18.26</org.projectlombok.version>
 		<projectlombok.mapstruct.binding.version>0.2.0</projectlombok.mapstruct.binding.version>
 	</properties>
+	<packaging>pom</packaging>
 
 	<developers>
 		<developer>
@@ -32,6 +33,14 @@
 			<name>Stephanie Marchi</name>
 		</developer>
 	</developers>
+
+	<distributionManagement>
+		<repository>
+			<id>erp-system-erp-erp-system-jdi</id>
+			<name>erp-system-erp-erp-system-jdi</name>
+			<url>https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
@@ -98,11 +107,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -112,8 +116,18 @@
 			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+			<version>${org.projectlombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${org.mapstruct.version}</version>
+		</dependency>
 	</dependencies>
-
 
 	<build>
 		<plugins>
